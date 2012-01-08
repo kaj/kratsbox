@@ -71,6 +71,7 @@
                 limitSize();
             }
             methods.loaddata(this);
+            root.show();
             root.find('.bg').fadeTo(400, 0.8);
             root.find('#krbxframe').show();
             root.find('#krbxclose').focus();
@@ -97,7 +98,7 @@
             });
         },
         close : function() {
-            root.find('.bg').fadeOut();
+            root.find('.bg').fadeOut(400, function(){root.hide()});
             root.find('#krbxframe').hide();
             $(links[root.find('img').data('current')]).focus();
             return false;
