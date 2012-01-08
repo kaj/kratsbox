@@ -61,6 +61,14 @@
                         return stop(event);
                     }
                 });
+                function limitSize() {
+                    var img = root.find('img');
+                    root.find('#krbxframe').width('auto');
+                    img.css('max-height', (root.height()-100)+'px');
+                    root.find('#krbxframe').width(img.width());
+                }
+                $(window).resize(limitSize);
+                limitSize();
             }
             methods.loaddata(this);
             root.show();

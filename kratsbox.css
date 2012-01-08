@@ -7,12 +7,18 @@
     z-offset: 1000;
     background: rgba(30, 30, 30, 0.9);
 }
+#krbxviewer img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
 #krbxviewer #krbxframe {
     background: #444044;
     border-radius: 1em;
     padding: 1em;
     margin: 2em auto 0;
-    width: 50%; /* default, to be overridden with actual image size */
+    width: 90%; /* default, to be overridden with actual image size */
     box-shadow: 0 0 2em .4em black;
 }
 #krbxviewer p {
