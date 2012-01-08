@@ -66,7 +66,7 @@
             });
         },
         close : function() {
-            $('#krbxviewer').hide();
+            root.hide();
             return false;
         }
     };
