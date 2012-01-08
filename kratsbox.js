@@ -16,9 +16,28 @@
                         +'</div>'
                         +'</div>');
                 root = $('#krbxviewer');
-                root.find('#krbxclose').bind('click.kratsbox', methods.close);
-                root.find('#krbxnext').bind('click.kratsbox', methods.next);
-                root.find('#krbxprev').bind('click.kratsbox', methods.prev);
+                var close = root.find('#krbxclose'),
+                next = root.find('#krbxnext'),
+                prev = root.find('#krbxprev');
+                close.bind('click.kratsbox', methods.close);
+                next.bind('click.kratsbox', methods.next);
+                prev.bind('click.kratsbox', methods.prev);
+                function setupfocus(elem, nextelem, prevelem) {
+                    elem.keydown(function(event){
+                        if(event.which == 9) {
+                            if(event.shiftKey) {
+                                prevelem.focus();
+                            } else {
+                                nextelem.focus();
+                            } 
+                            event.stopPropagation();
+                            return false;
+                        }
+                    });
+                }
+                setupfocus(close, prev, next);
+                setupfocus(next, close, prev);
+                setupfocus(prev, next, close);
                 root.keydown(function(event){
                     function stop(e) { e.stopPropagation(); return false; }
                     switch(event.which) {
