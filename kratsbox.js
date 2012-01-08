@@ -19,6 +19,19 @@
                 root.find('#krbxclose').bind('click.kratsbox', methods.close);
                 root.find('#krbxnext').bind('click.kratsbox', methods.next);
                 root.find('#krbxprev').bind('click.kratsbox', methods.prev);
+                root.keyup(function(event){
+                    switch(event.which) {
+                    case 27:
+                        methods.close();
+                        return false;
+                    case 37:
+                        methods.prev();
+                        return false;
+                    case 39:
+                        methods.next();
+                        return false;
+                    }
+                });
             }
             methods.loaddata(this);
             root.show();
