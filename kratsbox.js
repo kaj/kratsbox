@@ -56,13 +56,13 @@
             return false;
         },
         loaddata: function(selected) {
-            var imgsrc = $(selected).attr('href');
-            var img = root.find('img');
-            img.data('current', $(selected).data('krbxindex'));
-            img.attr('src', imgsrc);
-            root.find('#krbxcaption').text($(selected).attr('title'));
+            var s = $(selected),
+                img = root.find('img');
+            img.data('current', s.data('krbxindex'));
+            img.attr('src', s.attr('href'));
+            root.find('#krbxcaption').text(s.attr('title'));
             img.bind('load', function() {
-                root.find('#krbxframe').width(img.get(0).width);
+                root.find('#krbxframe').width(img.width());
             });
         },
         close : function() {
