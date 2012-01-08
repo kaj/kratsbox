@@ -67,6 +67,7 @@
         },
         close : function() {
             root.hide();
+            $(links[root.find('img').data('current')]).focus();
             return false;
         }
     };
