@@ -3,7 +3,7 @@
     methods = {
         open : function() {
             if(!root) {
-                $('body').append('<div id="krbxviewer">'
+                $('body').append('<div id="krbxviewer"><div class="bg"></div>'
                         +'<div id="krbxframe"><img alt="">'
                         +'<p>'
                         +'<a href="#close" id="krbxclose" title="close">'
@@ -71,7 +71,8 @@
                 limitSize();
             }
             methods.loaddata(this);
-            root.show();
+            root.find('.bg').fadeTo(400, 0.8);
+            root.find('#krbxframe').show();
             root.find('#krbxclose').focus();
             return false;
         },
@@ -96,7 +97,8 @@
             });
         },
         close : function() {
-            root.hide();
+            root.find('.bg').fadeOut();
+            root.find('#krbxframe').hide();
             $(links[root.find('img').data('current')]).focus();
             return false;
         }

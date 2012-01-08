@@ -1,11 +1,17 @@
 #krbxviewer {
+    z-index: 1000;
+}
+#krbxviewer, #krbxviewer .bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-offset: 1000;
-    background: rgba(30, 30, 30, 0.9);
+}
+#krbxviewer .bg {
+    display: none;
+    background: #333333;
+    z-index: 1;
 }
 #krbxviewer img {
     width: auto;
@@ -20,6 +26,8 @@
     margin: 2em auto 0;
     width: 90%; /* default, to be overridden with actual image size */
     box-shadow: 0 0 2em .4em black;
+    position: relative;
+    z-index: 20;
 }
 #krbxviewer p {
     margin: 1ex 0 0;
