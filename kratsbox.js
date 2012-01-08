@@ -47,12 +47,12 @@
         },
         next: function() {
             var i = root.find('img').data('current') + 1
-            methods.loaddata(links[i]);
+            methods.loaddata(links[i % links.length]);
             return false;
         },
         prev: function() {
             var i = root.find('img').data('current') - 1
-            methods.loaddata(links[i]);
+            methods.loaddata(links[(i+links.length) % links.length]);
             return false;
         },
         loaddata: function(selected) {
