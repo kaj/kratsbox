@@ -68,6 +68,7 @@
                     root.find('#krbxframe').width(img.width());
                 }
                 $(window).resize(limitSize);
+                root.find('img').bind('load', limitSize);
                 limitSize();
             }
             methods.loaddata(this);
@@ -93,9 +94,6 @@
             img.data('current', s.data('krbxindex'));
             img.attr('src', s.attr('href'));
             root.find('#krbxcaption').text(s.attr('title'));
-            img.bind('load', function() {
-                root.find('#krbxframe').width(img.width());
-            });
         },
         close : function() {
             root.find('.bg').fadeOut(400, function(){root.hide()});
