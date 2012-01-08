@@ -1,15 +1,18 @@
 (function($) {
-    var links, root = false,
+    var settings, links, root = false,
     methods = {
         open : function() {
             if(!root) {
                 $('body').append('<div id="krbxviewer">'
                         +'<div id="krbxframe"><img alt="">'
                         +'<p>'
-                        +'<a href="#close" id="krbxclose" title="close">\u00D7</a>'
+                        +'<a href="#close" id="krbxclose" title="close">'
+                        +settings['close']+'</a>'
                         +'<span class="krbxbtns">'
-                        +'<a href="#prev" id="krbxprev" title="previous image">\u2190</a>'
-                        +'<a href="#next" id="krbxnext" title="next image">\u2192</a>'
+                        +'<a href="#prev" id="krbxprev" title="previous image">'
+                        +settings['prev']+'</a>'
+                        +'<a href="#next" id="krbxnext" title="next image">'
+                        +settings['next']+'</a>'
                         +'</span>'
                         +'<span id="krbxcaption"></span>'
                         +'</p>'
@@ -92,8 +95,10 @@
     };
     $.fn.kratsbox = function(options) {
         // this is the jQuery-selected links
-        var settings = $.extend({
-            'whatever': 'default'
+        settings = $.extend({
+            'next': 'next \u2192',
+            'prev': '\u2190 prev',
+            'close': 'close \u00D7'
         }, options);
         links = this;
         this.each(function(index) {
