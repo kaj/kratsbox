@@ -102,17 +102,16 @@
         }
     };
     $.fn.kratsbox = function(options) {
-        // this is the jQuery-selected links
         settings = $.extend({
             'next': 'next \u2192',
             'prev': '\u2190 prev',
             'close': 'close \u00D7'
         }, options);
         links = this;
-        this.each(function(index) {
+        links.each(function(index) {
             $(this).data('krbxindex', index);
         });
-        this.bind('click.kratsbox', methods.open);
+        links.bind('click.kratsbox', methods.open);
         return this;
     };
 })(jQuery);
