@@ -19,17 +19,24 @@
                 root.find('#krbxclose').bind('click.kratsbox', methods.close);
                 root.find('#krbxnext').bind('click.kratsbox', methods.next);
                 root.find('#krbxprev').bind('click.kratsbox', methods.prev);
-                root.keyup(function(event){
+                root.keydown(function(event){
+                    function stop(e) { e.stopPropagation(); return false; }
                     switch(event.which) {
-                    case 27:
+                    case 27: // escape
                         methods.close();
-                        return false;
-                    case 37:
+                        return stop(event);
+                    case 37: // left arrow
+                    case 38: // up arrow
+                    case 33: // pgup
+                    case 78: // 'n'
                         methods.prev();
-                        return false;
-                    case 39:
+                        return stop(event);
+                    case 39: // right arrow
+                    case 40: // down arrow
+                    case 34: // pgdn
+                    case 80: // 'p'
                         methods.next();
-                        return false;
+                        return stop(event);
                     }
                 });
             }
