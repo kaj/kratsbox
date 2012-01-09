@@ -94,7 +94,7 @@
                 img = root.find('img');
             img.data('current', s.data('krbxindex'));
             img.attr('src', s.attr('href'));
-            root.find('#krbxcaption').text(s.attr('title'));
+            root.find('#krbxcaption').text(s.attr('title') || '');
         },
         close : function() {
             root.find('.bg').fadeOut(400, function(){root.hide()});
