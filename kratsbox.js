@@ -74,7 +74,7 @@
             }
             methods.loaddata(this);
             root.show();
-            root.find('.bg').fadeTo(400, 0.8);
+            root.find('.bg').fadeTo(200, 0.8);
             root.find('#krbxframe').show();
             root.find('#krbxclose').focus();
             return false;
