@@ -3,22 +3,22 @@
     methods = {
         open : function() {
             if(!root) {
-                $('body').append('<div id="krbxviewer"><div class="bg"></div>'
-                        +'<div id="krbxframe"><img alt="">'
-                        +'<p>'
-                        +'<a href="#close" id="krbxclose" title="close">'
-                        +settings['close']+'</a>'
-                        +'<span class="krbxbtns">'
-                        +'<a href="#prev" id="krbxprev" title="previous image">'
-                        +settings['prev']+'<span class="extra"></span></a>'
-                        +'<a href="#next" id="krbxnext" title="next image">'
-                        +settings['next']+'<span class="extra"></span></a>'
-                        +'</span>'
-                        +'<span id="krbxcaption"></span>'
-                        +'</p>'
-                        +'</div>'
-                        +'</div>');
-                root = $('#krbxviewer');
+                root =
+                    $('<div id="krbxviewer"><div class="bg"></div>'+
+                      '<div id="krbxframe"><img alt="">'+
+                      '<p>'+
+                      '<a href="#close" id="krbxclose" title="close">'+
+                      settings['close']+'</a>'+
+                      '<span class="krbxbtns">'+
+                      '<a href="#prev" id="krbxprev" title="previous image">'+
+                      settings['prev']+'<span class="extra"></span></a>'+
+                      '<a href="#next" id="krbxnext" title="next image">'+
+                      settings['next']+'<span class="extra"></span></a>'+
+                      '</span>'+
+                      '<span id="krbxcaption"></span>'+
+                      '</p>'+
+                      '</div>'+
+                      '</div>').appendTo('body');
                 var close = root.find('#krbxclose'),
                 next = root.find('#krbxnext'),
                 prev = root.find('#krbxprev');
