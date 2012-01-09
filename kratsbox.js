@@ -4,24 +4,24 @@
         open : function() {
             if(!root) {
                 root =
-                    $('<div id="krbxviewer"><div class="bg"></div>'+
+                    $('<div id="kratsbox"><div class="bg"></div>'+
                       '<div id="krbxframe"><img alt="">'+
                       '<p>'+
-                      '<a href="#close" id="krbxclose" title="close">'+
+                      '<a href="#close" class="close" title="close">'+
                       settings['close']+'</a>'+
                       '<span class="krbxbtns">'+
-                      '<a href="#prev" id="krbxprev" title="previous image">'+
+                      '<a href="#prev" class="prev" title="previous image">'+
                       settings['prev']+'<span class="extra"></span></a>'+
-                      '<a href="#next" id="krbxnext" title="next image">'+
+                      '<a href="#next" class="next" title="next image">'+
                       settings['next']+'<span class="extra"></span></a>'+
                       '</span>'+
                       '<span id="krbxcaption"></span>'+
                       '</p>'+
                       '</div>'+
                       '</div>').appendTo('body');
-                var close = root.find('#krbxclose'),
-                next = root.find('#krbxnext'),
-                prev = root.find('#krbxprev');
+                var close = root.find('.close'),
+                next = root.find('.next'),
+                prev = root.find('.prev');
                 close.bind('click.kratsbox', methods.close);
                 next.bind('click.kratsbox', methods.next);
                 prev.bind('click.kratsbox', methods.prev);
@@ -76,7 +76,7 @@
             root.show();
             root.find('.bg').fadeTo(200, 0.8);
             root.find('#krbxframe').show();
-            root.find('#krbxclose').focus();
+            root.find('.close').focus();
             return false;
         },
         next: function() {
