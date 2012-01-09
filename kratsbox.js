@@ -1,5 +1,5 @@
 (function($) {
-    var settings, links, root = false,
+    var settings, links, root = false, img,
     methods = {
         open : function() {
             if(!root) {
@@ -19,6 +19,7 @@
                       '</p>'+
                       '</div>'+
                       '</div>').appendTo('body');
+                img = root.find('img');
                 var close = root.find('.close'),
                 next = root.find('.next'),
                 prev = root.find('.prev');
@@ -62,14 +63,13 @@
                     }
                 });
                 function limitSize() {
-                    var img = root.find('img');
                     root.find('#krbxframe').width('auto');
                     img.css('max-height', (root.height()-100)+'px');
                     root.find('#krbxframe').width(img.width());
                     root.find('.extra').height(img.height());
                 }
                 $(window).resize(limitSize);
-                root.find('img').bind('load', limitSize);
+                img.bind('load', limitSize);
                 limitSize();
             }
             methods.loaddata(this);
@@ -80,18 +80,17 @@
             return false;
         },
         next: function() {
-            var i = root.find('img').data('current') + 1
+            var i = img.data('current') + 1
             methods.loaddata(links[i % links.length]);
             return false;
         },
         prev: function() {
-            var i = root.find('img').data('current') - 1
+            var i = img.data('current') - 1
             methods.loaddata(links[(i+links.length) % links.length]);
             return false;
         },
         loaddata: function(selected) {
-            var s = $(selected),
-                img = root.find('img');
+            var s = $(selected);
             img.data('current', s.data('krbxindex'));
             img.attr('src', s.attr('href'));
             root.find('#krbxcaption').text(s.attr('title') || '');
@@ -99,7 +98,7 @@
         close : function() {
             root.find('.bg').fadeOut(400, function(){root.hide()});
             root.find('#krbxframe').hide();
-            $(links[root.find('img').data('current')]).focus();
+            $(links[img.data('current')]).focus();
             return false;
         }
     };
