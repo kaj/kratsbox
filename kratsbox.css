@@ -29,6 +29,36 @@
     position: relative;
     z-index: 20;
 }
+#krbxviewer .extra {
+    position: absolute;
+    top: 1em;
+    height: 90%;
+    width: 30%;
+}
+#krbxviewer a:hover {
+    color: red;
+}
+
+#krbxviewer #krbxprev .extra { left: 1em; }
+#krbxviewer #krbxnext .extra { right: 1em; }
+#krbxviewer #krbxprev .extra:hover:before,
+#krbxviewer #krbxnext .extra:hover:before {
+    display: block;
+    position: absolute;
+    top: 30%;
+    background: #444044;
+    padding: .2em .5em;
+    font-size: 2em;
+}
+#krbxviewer #krbxprev .extra:hover:before {
+    content: '\2190'; left: 0;
+    border-radius: 0 1ex 1ex 0;
+}
+#krbxviewer #krbxnext .extra:hover:before {
+    content: '\2192'; right: 0;
+    border-radius: 1ex 0 0 1ex;
+}
+
 #krbxviewer p {
     margin: 1ex 0 0;
     color: #cccccc;

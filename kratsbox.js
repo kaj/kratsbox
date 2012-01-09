@@ -10,9 +10,9 @@
                         +settings['close']+'</a>'
                         +'<span class="krbxbtns">'
                         +'<a href="#prev" id="krbxprev" title="previous image">'
-                        +settings['prev']+'</a>'
+                        +settings['prev']+'<span class="extra"></span></a>'
                         +'<a href="#next" id="krbxnext" title="next image">'
-                        +settings['next']+'</a>'
+                        +settings['next']+'<span class="extra"></span></a>'
                         +'</span>'
                         +'<span id="krbxcaption"></span>'
                         +'</p>'
@@ -66,6 +66,7 @@
                     root.find('#krbxframe').width('auto');
                     img.css('max-height', (root.height()-100)+'px');
                     root.find('#krbxframe').width(img.width());
+                    root.find('.extra').height(img.height());
                 }
                 $(window).resize(limitSize);
                 root.find('img').bind('load', limitSize);
