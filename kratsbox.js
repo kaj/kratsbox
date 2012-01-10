@@ -39,9 +39,15 @@
                         }
                     });
                 }
-                setupfocus(close, prev, next);
-                setupfocus(next, close, prev);
-                setupfocus(prev, next, close);
+                if (links.length > 1) {
+                    setupfocus(close, prev, next);
+                    setupfocus(next, close, prev);
+                    setupfocus(prev, next, close);
+                } else {
+                    prev.hide();
+                    next.hide();
+                    setupfocus(close, close, close);
+                }
                 root.keydown(function(event){
                     function stop(e) { e.stopPropagation(); return false; }
                     switch(event.which) {
