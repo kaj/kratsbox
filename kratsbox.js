@@ -45,6 +45,9 @@
                 root.keydown(function(event){
                     function stop(e) { e.stopPropagation(); return false; }
                     switch(event.which) {
+                    case 9: // tab
+                        close.focus();
+                        return stop(event);
                     case 27: // escape
                         methods.close();
                         return stop(event);
