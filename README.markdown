@@ -34,6 +34,13 @@ You also might want to set some options, e.g. for localization.
       });
     });
 
+This assumes you have image links.  I usually do something like:
+
+    <a class="image" href="large-image.jpg"><img src="small-image.jpg"></a>
+
+This makes the small image visible directly in the page, and clicknig it
+brings up a box displaying the large image.
+
 Options
 -------
 
