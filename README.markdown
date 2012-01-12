@@ -7,9 +7,10 @@ Usage
 -----
 
 First, put the kratsbox file in some path on your web server and make
-sure you have them availiable in the page:
+sure you have them (and jQuery) availiable in the page:
 
     <link rel="stylesheet" type="text/css" href="/somepath/kratsbox.css"/>
+    <script type="text/javascript" src="/somepath/jquery.js"></script>
     <script type="text/javascript" src="/somepath/kratsbox.js"></script>
 
 You can (and should) combine and minify them with your other javascript and
