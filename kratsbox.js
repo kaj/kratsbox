@@ -113,10 +113,18 @@
     };
     $.fn.kratsbox = function(options) {
         settings = $.extend({
+            'minsize': 500,
             'next': 'next \u2192',
             'prev': '\u2190 prev',
             'close': 'close \u00D7'
         }, options);
+        
+        if ($(window).width() < settings.minsize ||
+            $(window).height() < settings.minsize) {
+            
+            return this;
+        }
+        
         links = this;
         links.each(function(index) {
             $(this).data('krbxindex', index);

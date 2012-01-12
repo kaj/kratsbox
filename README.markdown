@@ -40,3 +40,5 @@ Options
 * `next` - Text for the link to the next image.
 * `prev` - Text for the link to the previous image.
 * `close` - Text for the close button.
+* `minsize` - If the browser window is less tall or less wide than
+   this, kratsbox functionality will be disabled.
