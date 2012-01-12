@@ -23,7 +23,7 @@
     background: white;
     border-radius: 1em;
     padding: 1em 1em .2em 1em;
-    margin: 2em auto 0;
+    margin: 1.5em auto 0;
     width: 90%; /* default, to be overridden with actual image size */
     box-shadow: 0 0 2em .4em black;
     position: relative;

@@ -73,7 +73,7 @@
                 });
                 function limitSize() {
                     root.find('#krbxframe').width('auto');
-                    img.css('max-height', (root.height()-100)+'px');
+                    img.css('max-height', (root.height()-120)+'px');
                     root.find('#krbxframe').width(img.width());
                     root.find('.extra').height(img.height());
                 }
