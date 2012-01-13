@@ -2,6 +2,17 @@ Kratsbox
 ========
 
 A simple lightbox-like jQuery plugin focusing on usability.
+What makes kratsbox different from other lightboxes is:
+
+* _Keyboard focus_.  The close, next and prev actions get visible
+  focus, and when kratsbox is closed, focus returns to the right link.
+
+* _Only images_.  While not an feature in itself, it does allow the
+  small size of kratsbox.
+
+* _No extra loading_.  The graphics in kratsbox is pure css3, no extra
+  images / sprites.
+
 
 Usage
 -----
