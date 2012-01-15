@@ -45,27 +45,30 @@
                     setupfocus(close, close, close);
                 }
                 root.keydown(function(event){
-                    function stop(e) { e.stopPropagation(); return false; }
                     switch(event.which) {
                     case 9: // tab
                         close.focus();
-                        return stop(event);
+                        break;
                     case 27: // escape
                         methods.close();
-                        return stop(event);
+                        break;
                     case 37: // left arrow
                     case 38: // up arrow
                     case 33: // pgup
                     case 78: // 'n'
                         methods.prev();
-                        return stop(event);
+                        break;
                     case 39: // right arrow
                     case 40: // down arrow
                     case 34: // pgdn
                     case 80: // 'p'
                         methods.next();
-                        return stop(event);
+                        break;
+                    default:
+                        return true;
                     }
+                    event.stopPropagation();
+                    return false;
                 });
                 function limitSize() {
                     root.find('#krbxframe').width('auto');
