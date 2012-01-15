@@ -6,19 +6,15 @@
                 root =
                     $('<div id="kratsbox"><div class="bg"></div>'+
                       '<div id="krbxframe"><img alt="">'+
-                      '<p>'+
-                      '<a href="#close" class="close" title="close">'+
+                      '<p><a href="#close" class="close" title="close">'+
                       settings['close']+'</a>'+
                       '<span class="krbxbtns">'+
                       '<a href="#prev" class="prev" title="previous image">'+
                       settings['prev']+'<span class="extra"></span></a>'+
                       '<a href="#next" class="next" title="next image">'+
                       settings['next']+'<span class="extra"></span></a>'+
-                      '</span>'+
-                      '<span id="krbxcaption"></span>'+
-                      '</p>'+
-                      '</div>'+
-                      '</div>').appendTo('body');
+                      '</span><span id="krbxcaption"></span></p></div></div>')
+                    .appendTo('body');
                 img = root.find('img');
                 var close = root.find('.close'),
                 next = root.find('.next'),
