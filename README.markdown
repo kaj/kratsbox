@@ -34,7 +34,7 @@ on and call kratsbox, like so:
 
     $('a.image').kratsbox();
 
-As usual, you need to execute that after the links actually exits.
+As usual, you need to execute that after the links actually exist.
 You also might want to set some options, e.g. for localization.
   
     $(function() {
