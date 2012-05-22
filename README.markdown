@@ -51,7 +51,7 @@ This assumes you have image links.  I usually do something like:
        title="Wild rose beside a road in Stockholm. Cc-by Rasmus Kaj">
      <img src="small-image.jpg" width="200" height="133"
           alt="Image: A flower">
-   </a>
+    </a>
 
 This makes the small image visible directly in the page, and clicking it
 brings up a box displaying the large image.
