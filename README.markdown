@@ -47,10 +47,19 @@ You also might want to set some options, e.g. for localization.
 
 This assumes you have image links.  I usually do something like:
 
-    <a class="image" href="large-image.jpg"><img src="small-image.jpg"></a>
+    <a class="image" href="large-image.jpg"
+       title="Wild rose beside a road in Stockholm. Cc-by Rasmus Kaj">
+     <img src="small-image.jpg" width="200" height="133"
+          alt="Image: A flower">
+   </a>
 
-This makes the small image visible directly in the page, and clicknig it
+This makes the small image visible directly in the page, and clicking it
 brings up a box displaying the large image.
+The title attribute from the link describes what is linked to and is
+used as a caption when showing the large image.
+Img alts saying it's an image is sometimes frowned upon, but I tink it
+is good when considered it is the link text for the larger version of
+the image.
 
 Options
 -------
