@@ -71,10 +71,14 @@
                     return false;
                 });
                 function limitSize() {
-                    root.find('#krbxframe').width('auto');
-                    img.css('max-height', (root.height()-120)+'px');
-                    root.find('#krbxframe').width(img.width());
-                    root.find('.extra').height(img.height());
+                    if (img.width()) {
+                        root.find('#krbxframe').width('auto');
+                        img.css('max-height', (root.height()-120)+'px');
+                        root.find('#krbxframe').width(img.width());
+                        root.find('.extra').height(img.height());
+                    } else {
+                        window.setTimeout(limitSize, 100);
+                    }
                 }
                 $(window).resize(limitSize);
                 img.bind('load', limitSize);
