@@ -102,10 +102,15 @@
             return false;
         },
         loaddata: function(selected) {
-            var s = $(selected);
+            var s = $(selected), cap = s.attr('title'),
+                capE = root.find('#krbxcaption');
             img.data('current', s.data('krbxindex'));
             img.attr('src', s.attr('href'));
-            root.find('#krbxcaption').text(s.attr('title') || '');
+            if (cap) {
+                capE.text(cap);
+            } else {
+                capE.html(s.parent('figure').find('figcaption').html() || '');
+            }
         },
         close : function() {
             root.find('.bg').fadeOut(400, function(){root.hide()});

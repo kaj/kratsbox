@@ -61,6 +61,22 @@ Img alts saying it's an image is sometimes frowned upon, but I tink it
 is good when considered it is the link text for the larger version of
 the image.
 
+Kratsbox also supports the figure / figcaption elements, where
+figcaption may contain markup.  Depending on your stylesheet, the
+figcaption may be visible for the small image as well as in the box
+with the large image.
+
+    <figure>
+      <a href="large-image.jpg">
+        <img src="small-image.jpg" width="200" height="133"
+             alt="Image: A flower">
+      </a>
+      <figcaption>
+        Wild rose beside a road in Stockholm.
+        Cc-by <a href="http://rasmus.krats.se/">Rasmus Kaj</a>.
+      </figcaption>
+    </figure>
+
 Options
 -------
 
