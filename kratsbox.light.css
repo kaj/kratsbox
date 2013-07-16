@@ -65,6 +65,7 @@
     padding: .3em 0;
     color: #222222;
     overflow: hidden;
+    text-align: left;
 }
 #kratsbox .krbxbtns, #kratsbox .close{
     float: right;
