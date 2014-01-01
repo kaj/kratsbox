@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>A simple and usable lightbox &#x2013; Rasmus.krats.se </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="http://rasmus.krats.se/static/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="kratsbox.js"></script>
+    <style type="text/css">
+      figure { display: inline-block; padding: 1ex; margin: 0;
+      vertical-align: top; font-size: 80%; }
+      footer.site { margin-top: 2em; border-top: solid 1px #888888; }
+    </style>
+    <link rel="stylesheet" href="kratsbox.css" type="text/css" />
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="http://rasmus.krats.se/static/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <main>
+      <h1>A simple and usable lightbox</h1>
+      
+      <p>Test page for kratsbox. Have a look at some nice images.
+	This is a part of
+	<a href="https://github.com/kaj/kratsbox">kratsbox, 
+	  availiable on github</a>.</p>
+      
+      <div class="grouped">
+	<figure>
+	  <a href="http://rasmus.krats.se/img/img_0853" title="foo"><img height="133" src="http://rasmus.krats.se/img/img_0853.i" width="200"/></a>
+	</figure> 
+	<figure>
+	  <a href="http://rasmus.krats.se/img/img_1927">
+	    <img height="133" src="http://rasmus.krats.se/img/img_1927.i"
+		 width="200"/></a>
+	  <figcaption>Bar</figcaption>
+	</figure>
+	<figure>
+	  <a href="http://rasmus.krats.se/img/img_2750">
+	    <img src="http://rasmus.krats.se/img/img_2750.i"
+		 height="133" width="200"/></a>
+	</figure>
+      </div>
+      <div class="single">
+	<figure>
+	  <a href="http://rasmus.krats.se/img/img_2750">
+	    <img height="133" src="http://rasmus.krats.se/img/img_2750.i"
+		 width="200"/></a>
+	</figure>
+      </div>
+    </main>
+    <footer class="site">
+      <p class="license"><i class="icon-cc"></i><i class="icon-cc-by"></i>
+        This work by <a xmlns:cc="http://creativecommons.org/ns#" href="http://rasmus.krats.se/" rel="cc:attributionURL" property="cc:attributionName">Rasmus Kaj</a> is licensed under a
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+      </p>
+    </footer>
+    <script type="text/javascript">
+      kratsbox('.grouped figure a', { 
+          close: '\u00D7 close'
+      });
+      kratsbox('.single figure a');
+    </script>
+  </body>
+</html>
