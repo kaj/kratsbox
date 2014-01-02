@@ -1,17 +1,32 @@
 #kratsbox {
     z-index: 1000;
 }
-#kratsbox, #kratsbox .bg {
+#kratsbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(40, 40, 40, .5);
 }
-#kratsbox .bg {
+@keyframes kbFadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes kbFadeout {
+    0% {opacity: 1; display: block;}
+    100% {opacity: 0; display: block;}
+}
+#kratsbox.showing {
+    animation-duration: 1s;
+    animation-name: kbFadein;
+    opacity: 1;
+}
+#kratsbox.hidden {
+    animation-duration: 1s;
+    animation-name: kbFadeout;
+    opacity: 0;
     display: none;
-    background: #333333;
-    z-index: 1;
 }
 #kratsbox img {
     width: auto;
@@ -19,7 +34,7 @@
     max-width: 100%;
     max-height: 100%;
 }
-#kratsbox #krbxframe {
+#kratsbox div {
     background: #444044;
     border-radius: 1em;
     padding: 1em 1em .2em 1em;

@@ -20,8 +20,7 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
             root = document.querySelector('#kratsbox');
             console.debug('Open called, root:', root, ' data:', data);
             if(!root) {
-                root = create('<div id="kratsbox"><div class="bg"></div>'+
-                      '<div id="krbxframe"><img alt="">'+
+                root = create('<div id="kratsbox"><div><img alt="">'+
                       '<p><a href="#close" class="close" title="close">'+
                       settings['close']+'</a>'+
                       '<span class="krbxbtns">'+
@@ -36,7 +35,7 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
                 var img = root.querySelector('img');
                 function limitSize() {
                     if (img.clientWidth) {
-                        var kf = root.querySelector('#krbxframe');
+                        var kf = root.querySelector('div');
                         kf.style.width = 'auto';
                         img.style.maxHeight = (root.clientHeight-120)+'px';
                         kf.style.width = img.clientWidth + 'px';
@@ -108,10 +107,8 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
                 return false;
             };
             methods.loaddata(this);
-            //root.find('.bg').fadeTo(200, 0.8);
-            root.style.display = 'block';
-            root.querySelector('#krbxframe').style.display = 'block';
-            document.querySelector('#krbxframe .close').focus();
+            root.className = 'showing';
+            root.querySelector('.close').focus();
             console.debug("open method returning false");
             return false;
         },
@@ -143,9 +140,7 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
             console.debug('Loaddata done');
         },
         close : function() {
-            //root.find('.bg').fadeOut(400, function(){root.hide()});
-            document.querySelector('#krbxframe').style.display = 'none';
-            document.querySelector('#kratsbox').style.display = 'none';
+            root.className = 'hidden';
             data.links[data.current].focus();
             return false;
         }
