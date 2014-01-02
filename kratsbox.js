@@ -70,14 +70,12 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
                 };
             }
             if (data.links.length > 1) {
-                prev.style.display = 'inline';
-                next.style.display = 'inline';
+                root.querySelector('div').className = 'group';
                 setupfocus(close, prev, next);
                 setupfocus(next, close, prev);
                 setupfocus(prev, next, close);
             } else {
-                prev.style.display = 'none';
-                next.style.display = 'none';
+                root.querySelector('div').className = 'single';
                 setupfocus(close, close, close);
             }
             root.onkeydown = function(event) {

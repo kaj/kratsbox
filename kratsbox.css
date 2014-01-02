@@ -82,6 +82,9 @@
     text-align: left;
     text-shadow: -1px 0 black, 0 -1px black;
 }
+#kratsbox .single .krbxbtns {
+    display: none;
+}
 #kratsbox .krbxbtns, #kratsbox .close{
     float: right;
 }
