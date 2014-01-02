@@ -14,8 +14,8 @@
     100% {opacity: 1;}
 }
 @keyframes kbFadeout {
-    0% {opacity: 1; display: block;}
-    100% {opacity: 0; display: block;}
+    0% {opacity: 1; height: 100%;}
+    100% {opacity: 0; height: 0;}
 }
 #kratsbox.showing {
     animation-duration: 1s;
@@ -25,8 +25,9 @@
 #kratsbox.hidden {
     animation-duration: 1s;
     animation-name: kbFadeout;
+    height: 0;
     opacity: 0;
-    display: none;
+    overflow: hidden;
 }
 #kratsbox img {
     width: auto;
