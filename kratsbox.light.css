@@ -13,18 +13,30 @@
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
+@-webkit-keyframes kbFadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
 @keyframes kbFadeout {
+    0% {opacity: 1; height: 100%;}
+    100% {opacity: 0; height: 0;}
+}
+@-webkit-keyframes kbFadeout {
     0% {opacity: 1; height: 100%;}
     100% {opacity: 0; height: 0;}
 }
 #kratsbox.showing {
     animation-duration: 1s;
     animation-name: kbFadein;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: kbFadein;
     opacity: 1;
 }
 #kratsbox.hidden {
     animation-duration: 1s;
     animation-name: kbFadeout;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: kbFadeout;
     height: 0;
     opacity: 0;
     overflow: hidden;
