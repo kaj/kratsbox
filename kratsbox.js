@@ -21,12 +21,9 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
             console.debug('Open called, root:', root, ' data:', data);
             if(!root) {
                 root = create('<div id="kratsbox"><div><img alt="">'+
-                      '<a href="#close" class="krbxbtn close" title="close">'+
-                      settings['close']+'</a>'+
-                      '<a href="#next" class="krbxbtn next" title="next image">'+
-                      settings['next']+'<span class="extra"></span></a>'+
-                      '<a href="#prev" class="krbxbtn prev" title="previous image">'+
-                      settings['prev']+'<span class="extra"></span></a>'+
+                      '<a href="#close" class="krbxbtn close">close</a>'+
+                      '<a href="#next" class="krbxbtn next">next</a>'+
+                      '<a href="#prev" class="krbxbtn prev">prev</a>'+
                       '<p id="krbxcaption"></p></div></div>');
 
                 document.body.appendChild(root);
@@ -52,6 +49,9 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
             var close = root.querySelector('.close'),
             next = root.querySelector('.next'),
             prev = root.querySelector('.prev');
+            prev.innerHTML = settings['prev'] + '<span class="extra"></span>';
+            next.innerHTML = settings['next'] + '<span class="extra"></span>';
+            close.innerHTML = settings['close'];
             close.onclick = methods.close;
             next.onclick = methods.next;
             prev.onclick = methods.prev;
