@@ -10,6 +10,7 @@
     <style type="text/css">
       figure { display: inline-block; padding: 1ex; margin: 0;
       vertical-align: top; font-size: 80%; }
+      figcaption.zoomonly { display: none; }
       footer.site { margin-top: 2em; border-top: solid 1px #888888; }
     </style>
     <link rel="stylesheet" href="kratsbox.css" type="text/css" />
@@ -28,18 +29,25 @@
       
       <div class="grouped">
 	<figure>
-	  <a href="http://rasmus.krats.se/img/img_0853" title="foo"><img height="133" src="http://rasmus.krats.se/img/img_0853.i" width="200"/></a>
-	</figure> 
+	  <a href="http://rasmus.krats.se/img/img_0853"
+	     title="Thimble theme.  Photo: Rasmus Kaj."><img height="133" src="http://rasmus.krats.se/img/img_0853.i" width="200"/></a>
+	</figure>
 	<figure>
 	  <a href="http://rasmus.krats.se/img/img_1927">
 	    <img height="133" src="http://rasmus.krats.se/img/img_1927.i"
 		 width="200"/></a>
-	  <figcaption>Bar</figcaption>
+	  <figcaption>Summer scene piano.</figcaption>
+	  <figcaption class="zoomonly"><p>Photo:
+	    <a href="http://rasmus.krats.se/RasmusKaj">Rasmus Kaj</a>.</figcaption>
 	</figure>
 	<figure>
 	  <a href="http://rasmus.krats.se/img/img_2750">
 	    <img src="http://rasmus.krats.se/img/img_2750.i"
 		 height="133" width="200"/></a>
+	  <figcaption class="zoomonly">Squirrel in Hyde Park.
+	    Photo: <a href="http://rasmus.krats.se/RasmusKaj">Rasmus
+	    Kaj</a>.
+	  </figcaption>
 	</figure>
       </div>
       <div class="single">
@@ -57,10 +65,10 @@
       </p>
     </footer>
     <script type="text/javascript">
-      kratsbox('.grouped figure a', { 
+      kratsbox('.grouped figure > a', {
           close: '\u00D7 close'
       });
-      kratsbox('.single figure a');
+      kratsbox('.single figure > a');
     </script>
   </body>
 </html>

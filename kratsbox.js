@@ -130,10 +130,15 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
             if (cap) {
                 capE.innerHTML = cap;
             } else {
-                var capSrc = selected.parentNode.querySelector('figcaption');
+                var capSrc = selected.parentNode.querySelectorAll('figcaption');
                 if (capSrc) {
-                    capE.innerHTML = capSrc.innerHTML;
-                }
+		    capE.innerHTML = '';
+		    [].forEach.call(capSrc, function(s) {
+			capE.innerHTML += (s.innerHTML + ' ');
+		    });
+                } else {
+		    capE.innerHTML = '';
+		}
             }
             console.debug('Loaddata done');
         },
