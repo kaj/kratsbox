@@ -95,16 +95,19 @@
     overflow: hidden;
     text-align: left;
 }
-#kratsbox .single .krbxbtns {
+#kratsbox .single .next,
+#kratsbox .single .prev {
     display: none;
 }
-#kratsbox .krbxbtns, #kratsbox .close{
+#kratsbox .krbxbtn {
     float: right;
 }
 #kratsbox :link, #kratsbox :visited {
     color: black;
+}
+#kratsbox .krbxbtn:link, #kratsbox .krbxbtn:visited {
     font-weight: bold;
     text-decoration: none;
     margin: 0 .2em;
-    padding: 0 .2em;
+    padding: .2em;
 }

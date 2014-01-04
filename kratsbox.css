@@ -56,6 +56,7 @@
     box-shadow: 0 0 2em .4em black;
     position: relative;
     z-index: 20;
+    overflow: hidden;
 }
 #kratsbox .extra {
     position: absolute;
@@ -95,16 +96,19 @@
     text-align: left;
     text-shadow: -1px 0 black, 0 -1px black;
 }
-#kratsbox .single .krbxbtns {
+#kratsbox .single .next,
+#kratsbox .single .prev {
     display: none;
 }
-#kratsbox .krbxbtns, #kratsbox .close{
+#kratsbox .krbxbtn {
     float: right;
 }
 #kratsbox :link, #kratsbox :visited {
     color: white;
+}
+#kratsbox .krbxbtn:link, #kratsbox .krbxbtn:visited {
     font-weight: bold;
     text-decoration: none;
     margin: 0 .2em;
-    padding: 0 .2em;
+    padding: .2em;
 }

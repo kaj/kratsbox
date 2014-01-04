@@ -21,14 +21,13 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
             console.debug('Open called, root:', root, ' data:', data);
             if(!root) {
                 root = create('<div id="kratsbox"><div><img alt="">'+
-                      '<p><a href="#close" class="close" title="close">'+
+                      '<a href="#close" class="krbxbtn close" title="close">'+
                       settings['close']+'</a>'+
-                      '<span class="krbxbtns">'+
-                      '<a href="#prev" class="prev" title="previous image">'+
-                      settings['prev']+'<span class="extra"></span></a>'+
-                      '<a href="#next" class="next" title="next image">'+
+                      '<a href="#next" class="krbxbtn next" title="next image">'+
                       settings['next']+'<span class="extra"></span></a>'+
-                      '</span><span id="krbxcaption"></span></p></div></div>');
+                      '<a href="#prev" class="krbxbtn prev" title="previous image">'+
+                      settings['prev']+'<span class="extra"></span></a>'+
+                      '<p id="krbxcaption"></p></div></div>');
 
                 document.body.appendChild(root);
                 root = document.querySelector('#kratsbox');
