@@ -129,15 +129,10 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
             if (cap) {
                 capE.innerHTML = cap;
             } else {
-                var capSrc = selected.parentNode.querySelectorAll('figcaption');
-                if (capSrc) {
-		    capE.innerHTML = '';
-		    [].forEach.call(capSrc, function(s) {
-			capE.innerHTML += (s.innerHTML + ' ');
-		    });
-                } else {
-		    capE.innerHTML = '';
-		}
+                capE.innerHTML = Array.prototype.map.call(
+                    selected.parentNode.querySelectorAll('figcaption'),
+                    function(e) {return e.innerHTML;}
+                ).join('<br>');
             }
             console.debug('Loaddata done');
         },
