@@ -161,10 +161,9 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
         
         data.links = document.querySelectorAll(selector);
         console.log("Selector:", selector, "Links: ", data.links);
-        var i = 0;
-        [].forEach.call(data.links, function(link) {
-            console.debug("Initializing", link);
-            link.setAttribute('data-krbxindex', i++);
+        Array.prototype.forEach.call(data.links, function(link, i) {
+            console.debug("Initializing", link, i);
+            link.setAttribute('data-krbxindex', i);
             link.onclick = methods.open;
         });
         console.log('Data:', data);
