@@ -114,7 +114,7 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
             var img = root.querySelector('img');
             var cap = selected.getAttribute('title'),
                 capE = document.querySelector('#krbxcaption');
-            data.current = selected.getAttribute('data-krbxindex');
+            data.current = parseInt(selected.getAttribute('data-krbxindex'));
             img.setAttribute('src', selected.getAttribute('href'));
             if (cap) {
                 capE.innerHTML = cap;
