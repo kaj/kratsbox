@@ -4,30 +4,20 @@ if ( 'querySelector' in document && 'addEventListener' in window && Array.protot
         console.debug("In initkratsbox for selector '" + selector + "',",
                       options);
 
-        function create(htmlStr) {
-            var frag = document.createDocumentFragment(),
-            temp = document.createElement('div');
-            temp.innerHTML = htmlStr;
-            while (temp.firstChild) {
-                frag.appendChild(temp.firstChild);
-            }
-            return frag;
-        }
-
-        var settings, data = {}, root = false,
+        var settings, data = {}, root,
         methods = {
         open : function() {
             root = document.querySelector('#kratsbox');
             console.debug('Open called, root:', root, ' data:', data);
             if(!root) {
-                root = create('<div id="kratsbox"><div><img alt="">'+
-                      '<a href="#close" class="krbxbtn close">close</a>'+
-                      '<a href="#next" class="krbxbtn next">next</a>'+
-                      '<a href="#prev" class="krbxbtn prev">prev</a>'+
-                      '<p id="krbxcaption"></p></div></div>');
-
+                root = document.createElement('div');
+                root.id = 'kratsbox';
+                root.innerHTML = '<div><img alt="">'+
+                    '<a href="#close" class="krbxbtn close">close</a>'+
+                    '<a href="#next" class="krbxbtn next">next</a>'+
+                    '<a href="#prev" class="krbxbtn prev">prev</a>'+
+                    '<p id="krbxcaption"></p></div>';
                 document.body.appendChild(root);
-                root = document.querySelector('#kratsbox');
                 var img = root.querySelector('img');
                 function limitSize() {
                     if (img.clientWidth) {
