@@ -1,5 +1,5 @@
-var kratsbox = function(d) {
-    if ('querySelector' in d && 'addEventListener' in window && 'forEach' in Array) {
+var kratsbox = function(d,w) {
+    if ('querySelector' in d && 'addEventListener' in w && 'forEach' in Array) {
         
         return function(selector, options) {
             console.debug("In initkratsbox for selector '" + selector + "',",
@@ -28,11 +28,11 @@ var kratsbox = function(d) {
                                 kf.style.width = img.clientWidth + 'px';
                                 kf.querySelector('.extra').style.height = img.clientHeight + 'px';
                             } else {
-                                window.setTimeout(limitSize, 100);
+                                w.setTimeout(limitSize, 100);
                             }
                         }
                         console.debug("Img:", img)
-                        window.addEventListener('resize', limitSize);
+                        w.addEventListener('resize', limitSize);
                         img.addEventListener('load', limitSize);
                         limitSize();
                     }
@@ -145,8 +145,8 @@ var kratsbox = function(d) {
                 settings[attrname] = options[attrname];
             }
 
-            if (window.innerWidth < settings.minsize ||
-                window.innerHeight < settings.minsize) {
+            if (w.innerWidth < settings.minsize ||
+                w.innerHeight < settings.minsize) {
                 
                 return this;
             }
@@ -166,4 +166,4 @@ var kratsbox = function(d) {
             console.debug("kratsbox not supported in this browser");
         }
     }
-}(document);
+}(document,window);
