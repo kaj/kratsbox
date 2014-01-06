@@ -1,5 +1,5 @@
-var kratsbox = function(d,w) {
-    if ('querySelector' in d && 'addEventListener' in w && 'forEach' in Array) {
+var kratsbox = function(d,w,ap) {
+    if ('querySelector' in d && 'addEventListener' in w && 'forEach' in ap) {
         
         return function(selector, options) {
             var links, current, root, settings = {
@@ -123,7 +123,7 @@ var kratsbox = function(d,w) {
                 if (cap) {
                     ce.innerHTML = cap;
                 } else {
-                    ce.innerHTML = Array.prototype.map.call(
+                    ce.innerHTML = ap.map.call(
                         le.parentNode.querySelectorAll('figcaption'),
                         function(e) {return e.innerHTML;}
                     ).join('<br>');
@@ -138,7 +138,7 @@ var kratsbox = function(d,w) {
             
             links = d.querySelectorAll(selector);
             console.debug("kratsbox selector:", selector, ", links:", links);
-            Array.prototype.forEach.call(links, function(link, i) {
+            ap.forEach.call(links, function(link, i) {
                 link.setAttribute('data-krbxindex', i);
                 link.onclick = open;
             });
@@ -148,4 +148,4 @@ var kratsbox = function(d,w) {
             console.debug("kratsbox not supported in this browser");
         }
     }
-}(document,window);
+}(document,window,Array.prototype);
