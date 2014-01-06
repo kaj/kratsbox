@@ -14,6 +14,7 @@ var kratsbox = function(d,w,ap) {
 
             if (w.innerWidth < settings.minsize ||
                 w.innerHeight < settings.minsize) {
+                console.debug('kratsbox disabled, size is ' + w.innerWidth + ' x ' + w.innerHeight + ' but limit is ' + settings.minsize)
                 return;
             }
 
@@ -34,8 +35,10 @@ var kratsbox = function(d,w,ap) {
                             var kf = root.querySelector('div');
                             kf.style.width = 'auto';
                             img.style.maxHeight = (root.clientHeight-120)+'px';
-                            kf.style.width = img.clientWidth + 'px';
-                            kf.querySelector('.extra').style.height = img.clientHeight + 'px';
+                            kf.style.width = img.clientWidth+'px';
+                            ap.forEach.call(
+                                kf.querySelectorAll('.extra'),
+                                function(e){e.style.height=img.clientHeight+'px'})
                         } else {
                             w.setTimeout(limitSize, 100);
                         }
