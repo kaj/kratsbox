@@ -1,5 +1,8 @@
 var kratsbox = function(d,w,ap) {
-    var dbg = console && console.debug || function() {};
+    function dbg() {
+        if (typeof console == 'object' && 'log' in console)
+            console.log.apply(console, arguments);
+    }
     if ('querySelector' in d && 'addEventListener' in w && 'forEach' in ap) {
         
         return function(selector, options) {
@@ -141,7 +144,7 @@ var kratsbox = function(d,w,ap) {
             };
             
             links = d.querySelectorAll(selector);
-            dbg("kratsbox selector: %s, links: %r", selector, links);
+            dbg("kratsbox selector: %s, links: %o", selector, links);
             ap.forEach.call(links, function(link, i) {
                 link.setAttribute('data-krbxindex', i);
                 link.onclick = open;
