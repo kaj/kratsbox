@@ -9,6 +9,7 @@ What makes kratsbox different from other lightboxes is:
 
 * _Only images_.  While not an feature in itself, lack of support for
   embeddly, iframes or ajax does allow the small size of kratsbox.
+  The fact that no jQuery or other library is required also helps.
 
 * _No extra loading_.  The graphics in kratsbox is pure css3, no extra
   images / sprites.
