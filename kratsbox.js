@@ -1,6 +1,6 @@
 var kratsbox = function(d,w,ap) {
     function dbg() {
-        if (typeof console == 'object' && 'log' in console)
+        if (typeof console == 'object' && console.log)
             console.log.apply(console, arguments);
     }
     if ('querySelector' in d && 'addEventListener' in w && 'forEach' in ap) {
