@@ -1,4 +1,5 @@
 var kratsbox = function(d,w,ap) {
+    var dbg = console && console.debug || function() {};
     if ('querySelector' in d && 'addEventListener' in w && 'forEach' in ap) {
         
         return function(selector, options) {
@@ -14,7 +15,7 @@ var kratsbox = function(d,w,ap) {
 
             if (w.innerWidth < settings.minsize ||
                 w.innerHeight < settings.minsize) {
-                console.debug('kratsbox disabled, size is ' + w.innerWidth + ' x ' + w.innerHeight + ' but limit is ' + settings.minsize)
+                dbg('kratsbox disabled, size is %dx%d but limit is %d', w.innerWidth, w.innerHeight, settings.minsize)
                 return;
             }
 
@@ -118,7 +119,7 @@ var kratsbox = function(d,w,ap) {
                 return load(links[(current+links.length-1) % links.length]);
             };
             function load(le) {
-                console.debug('kratsbox load', le);
+                dbg('kratsbox load', le);
                 var ce = d.querySelector('#krbxcaption'),
                 cap = le.getAttribute('title');
                 current = parseInt(le.getAttribute('data-krbxindex'));
@@ -140,7 +141,7 @@ var kratsbox = function(d,w,ap) {
             };
             
             links = d.querySelectorAll(selector);
-            console.debug("kratsbox selector:", selector, ", links:", links);
+            dbg("kratsbox selector: %s, links: %r", selector, links);
             ap.forEach.call(links, function(link, i) {
                 link.setAttribute('data-krbxindex', i);
                 link.onclick = open;
@@ -148,7 +149,7 @@ var kratsbox = function(d,w,ap) {
         };
     } else {
         return function(s,o) {
-            console.debug("kratsbox not supported in this browser");
+            dbg("kratsbox not supported in this browser");
         }
     }
 }(document,window,Array.prototype);
